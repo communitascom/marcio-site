@@ -607,3 +607,9 @@ a.zap{display:inline-flex;align-items:center;gap:8px}
 a.zap .zap-ico{width:1.15em;height:1.15em;flex-shrink:0;color:inherit}
 .footer-col ul a.zap{gap:9px}
 .contact-info.contact-card a.zap{display:inline-flex}
+
+/* Contato: foto na mesma altura dos cartões e coluna mais larga */
+@media (min-width:981px){
+  .contact-grid.com-foto{grid-template-columns:0.95fr 1.2fr 1.2fr;align-items:stretch}
+  .contact-foto{min-height:0}
+}
