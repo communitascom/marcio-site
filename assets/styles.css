@@ -604,6 +604,6 @@ a.brand{display:flex}
 
 /* WhatsApp: ícone ao lado do número */
 a.zap{display:inline-flex;align-items:center;gap:8px}
-a.zap .zap-ico{width:1.15em;height:1.15em;flex-shrink:0;color:#25D366}
+a.zap .zap-ico{width:1.15em;height:1.15em;flex-shrink:0;color:inherit}
 .footer-col ul a.zap{gap:9px}
 .contact-info.contact-card a.zap{display:inline-flex}
