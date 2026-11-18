@@ -601,3 +601,9 @@ a.brand{display:flex}
   .btn:active,.btn:hover{transform:none}
   .tema-bloco:hover h3,.blog-card:hover .foto img,.footer-col ul a:hover{transform:none}
 }
+
+/* WhatsApp: ícone ao lado do número */
+a.zap{display:inline-flex;align-items:center;gap:8px}
+a.zap .zap-ico{width:1.15em;height:1.15em;flex-shrink:0;color:#25D366}
+.footer-col ul a.zap{gap:9px}
+.contact-info.contact-card a.zap{display:inline-flex}
