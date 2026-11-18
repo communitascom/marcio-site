@@ -19,4 +19,3 @@ Abra http://localhost:8000.
 - Links de LinkedIn e YouTube no rodapé apontam para as páginas iniciais genéricas.
 - `blog.html` e `blog-post.html` são esqueleto para ligar ao WordPress; os cards ainda apontam para `blog.html`.
 - Formulários (contato e newsletter): conferir o envio no domínio final (FormSubmit e Mailchimp).
-- Textos que dependem de validação do Márcio: ver a revisão final do projeto.
