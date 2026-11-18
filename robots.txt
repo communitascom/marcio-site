@@ -1,0 +1,3 @@
+# PRE-PRODUCAO: apagar este arquivo ao publicar no dominio do cliente
+User-agent: *
+Disallow: /
