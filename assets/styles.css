@@ -1,6 +1,5 @@
 /* Márcio Souza — Psicologia · design tokens + componentes */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fira+Sans:wght@400;500;600;700&display=swap');
 
 :root{
   --marrom:#4C2609;
@@ -203,7 +202,7 @@ footer{background:var(--marrom);color:#ecdcc8}
 .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
 .footer-col ul:not(:has(a)) li{font-size:13.5px;color:#cbb79e}
 .footer-col ul a{font-size:13.5px;color:#ecdcc8}
-.footer-col ul a:hover{color:var(--laranja)}
+.footer-col ul a:hover{color:#FF8A5C}
 .footer-newsletter{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-block:26px;border-top:1px solid rgba(255,255,255,.12)}
 .footer-newsletter h4{font-family:var(--font-destaque);font-weight:600;font-size:13px;color:#f0dcc9;text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap}
 .footer-form{display:flex;gap:8px;flex:1;min-width:220px;max-width:420px}
@@ -213,7 +212,7 @@ footer{background:var(--marrom);color:#ecdcc8}
 .footer-social{display:flex;gap:16px;align-items:center;margin-top:18px}
 .footer-social a{color:#ecdcc8;display:flex}
 .footer-social svg{width:19px;height:19px}
-.footer-social a:hover{color:var(--laranja)}
+.footer-social a:hover{color:#FF8A5C}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-block:20px;font-size:12.5px;color:#cbb79e;border-top:1px solid rgba(255,255,255,.12)}
 @media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
 @media (max-width:480px){.footer-grid{grid-template-columns:1fr}}
@@ -405,7 +404,7 @@ footer{background:var(--marrom);color:#ecdcc8}
 .nav-mobile-panel{position:absolute;right:0;top:calc(100% + 10px);z-index:40;min-width:260px;background:var(--marrom);border-radius:16px;padding:10px;display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(20,10,4,.35)}
 .nav-mobile-panel a{color:#fff;font-size:17px;font-weight:500;padding:13px 14px;border-radius:10px}
 .nav-mobile-panel a:hover{background:rgba(255,255,255,.08)}
-.nav-mobile-panel a:last-child{color:var(--laranja)}
+.nav-mobile-panel a:last-child{color:var(--laranja-claro,#FF8A5C)}
 @media (max-width:1260px){.nav-links{display:none}.nav-mobile{display:block}}
 @media (max-width:560px){
   .nav .btn.marrom{display:none}
@@ -533,7 +532,7 @@ footer{background:var(--marrom);color:#ecdcc8}
 .pular:focus{top:16px}
 
 /* ajustes pós-revisão: texto laranja legível, campos visíveis, voltar ao início */
-:root{--laranja-texto:#C7420F;--laranja-claro:#FF8A5C}
+:root{--laranja-texto:#BE3D0C;--laranja-claro:#FF8A5C}
 .eyebrow,.valor-num,.curriculo-grid h3,.contact-info-list .rotulo{color:var(--laranja-texto) !important}
 .page-header.dark .eyebrow,.servicos .eyebrow,.contact-info.contact-card .rotulo{color:var(--laranja-claro) !important}
 .form-contato input,.form-contato textarea{border-color:#8a8579}
@@ -610,7 +609,7 @@ a.zap .zap-ico{width:1.15em;height:1.15em;flex-shrink:0;color:inherit}
 
 /* Contato: foto na mesma altura dos cartões e coluna mais larga */
 @media (min-width:981px){
-  .contact-grid.com-foto{grid-template-columns:0.95fr 1.2fr 1.2fr;align-items:stretch}
+  .contact-grid.com-foto{align-items:stretch}
   .contact-foto{min-height:0}
 }
 
@@ -620,3 +619,21 @@ a.zap .zap-ico{width:1.15em;height:1.15em;flex-shrink:0;color:inherit}
 .contato-cartao .contact-info.contact-card{border-radius:0;background:transparent}
 @media (min-width:981px){.contact-grid.com-foto{grid-template-columns:1.45fr 1fr}}
 @media (max-width:980px){.contato-cartao{grid-template-columns:1fr}.contato-cartao .contact-foto{min-height:300px}}
+
+/* revisão técnica: foco, tarja legível, alvos de toque, movimento reduzido */
+.form-contato input:focus-visible,.form-contato textarea:focus-visible{outline:2px solid var(--laranja-btn);outline-offset:2px}
+.js .hl:not(.is-in){color:inherit}
+.js .hl{transition:background-size .8s var(--ease-in-out) .15s,color .3s ease .45s}
+.nav-mobile-panel a.ativo{background:rgba(255,255,255,.1)}
+.footer-social{gap:0}
+.footer-social a{width:44px;height:44px;align-items:center;justify-content:center}
+.footer-social a:first-child{margin-left:-12px}
+.contact-social-icons a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.footer-form button{min-height:44px}
+.footer-form input{min-height:44px}
+.blog-card .link{margin-top:auto}
+@media (max-width:560px){.hero > img{object-position:68% 30% !important}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .nav-mobile summary:active,.footer-form button:active,.footer-col ul a.voltar:hover svg{transform:none}
+}

@@ -1,5 +1,6 @@
 /* Movimento sutil do site: entrada ao rolar e tarja que se desenha. Sem JS, tudo aparece normalmente. */
 (function () {
+  try {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
   var vh = window.innerHeight || 800;
@@ -8,7 +9,7 @@
     '.presentation .wrap > *', '.servicos-intro > *', '.manifesto p', '.split-texto > *',
     '.dimensoes-head > *', '.blog-teaser .wrap > h2', '.blog-teaser .wrap > div:first-child',
     '.contato .wrap > *', '.intro-grid > *', '.video-lado', '.faq-head', '.faq-entry',
-    '.contact-grid > *', '.texto-2col > *', '.curriculo-grid > *', '.valores > *'
+    '.contact-grid > *', '.texto-2col > *', '.curriculo-grid > *', '.valores-grid > *'
   ];
   var GROUPS = ['.servicos-grid', '.temas-grid', '.blog-grid'];
 
@@ -34,8 +35,8 @@
   els.forEach(function (el) {
     if (el.getBoundingClientRect().top < vh * 0.92) el.classList.add('is-in');
   });
-  root.classList.add('js');
   if (reduce || !('IntersectionObserver' in window)) {
+    root.classList.add('js');
     els.concat(tarjas).forEach(function (el) { el.classList.add('is-in'); });
     return;
   }
@@ -59,4 +60,10 @@
     });
   }, { threshold: 0.9 });
   tarjas.forEach(function (t) { io2.observe(t); });
+  root.classList.add('js');
+  } catch (e) {
+    // Qualquer falha: nada fica escondido.
+    document.documentElement.classList.remove('js');
+    document.querySelectorAll('.reveal, .hl').forEach(function (el) { el.classList.add('is-in'); });
+  }
 })();
